@@ -3,6 +3,7 @@ version: '3.7'
 services:
   mysql:
     restart: always
+    platform: linux/x86_64
     image: mysql:${SERVICE_MYSQL_VERSION}
     ports:
       - ${SERVICE_MYSQL_HOST}:${SERVICE_MYSQL_PORT}:3306
