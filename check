@@ -3,6 +3,10 @@
 load inquirer
 
 check() {
+  if [ ! -f "$SERVICE_MYSQL_MY_CNF" ]; then
+    cp $SERVICE_DIR/default/my.cnf $SERVICE_MYSQL_MY_CNF
+  fi
+
   service::config SERVICE_MYSQL_HOST text "Input SERVICE_MYSQL_HOST:"
   service::config SERVICE_MYSQL_PORT text "Input SERVICE_MYSQL_PORT:"
   service::config SERVICE_MYSQL_ROOT_PASSWORD text "Input SERVICE_MYSQL_ROOT_PASSWORD:" $(os::random_string 16)

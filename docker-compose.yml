@@ -15,7 +15,8 @@ services:
       MYSQL_DATABASE: ${SERVICE_MYSQL_DATABASE}
     volumes:
       # conf
-      - ${SERVICE_CONFIGS}/conf:/etc/mysql/conf.d
+      # - ${SERVICE_CONFIGS}/conf:/etc/mysql/conf.d
+      - ${SERVICE_MYSQL_MY_CNF}:/etc/mysql/my.cnf
       # data
       - ${SERVICE_DATA}:/var/lib/mysql
 
