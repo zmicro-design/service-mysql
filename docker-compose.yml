@@ -19,6 +19,8 @@ services:
       - ${SERVICE_MYSQL_MY_CNF}:/etc/mysql/my.cnf
       # data
       - ${SERVICE_DATA}:/var/lib/mysql
+    mem_limit: 8192m
+    cpus: 4
 
 
 networks:
