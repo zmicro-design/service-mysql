@@ -21,7 +21,10 @@ services:
       - ${SERVICE_DATA}:/var/lib/mysql
     mem_limit: 8192m
     cpus: 4
-
+    # fix "mbind: Operation not permitted"
+    # stackoverflow: https://stackoverflow.com/questions/55559386/how-to-fix-mbind-operation-not-permitted-in-mysql-error-log
+    cap_add:
+      - SYS_NICE
 
 networks:
   default:
